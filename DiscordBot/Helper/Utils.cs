@@ -19,10 +19,11 @@ namespace DiscordBot.Helper
         public static string GetCommands()
         {
             var helpText = "Animals: \n" +
-                           "!fox - get a random image of a fox \n" +
+                           "!cat - get a random image of a cat \n" +
 						   "!dogfact - get a random dog fact \n" +
 						   "!duck - get a random image of a duck \n\r" +
-                           "Anime: \n" +
+						   "!fox - get a random image of a fox \n" +
+						   "Anime: \n" +
                            "!baka - get an animated image of a person screaming baka \n" +
                            "!dice - roll a die \n" +
                            "!8ball - roll an 8ball \n\r" +

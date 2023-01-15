@@ -82,6 +82,13 @@ namespace DiscordBot
 							break;
 						}
 
+					case "!cat":
+						{
+							var text = Cataas.GetCatImage();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
 					case "!dogfact":
 						{
 							var text = DogAPI.DogFact();
