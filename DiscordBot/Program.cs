@@ -97,6 +97,13 @@ namespace DiscordBot
 							break;
 						}
 
+					case "!meowfact":
+					{
+						var text = MeowFacts.MeowFact();
+						msg.Channel.SendMessageAsync(text);
+						break;
+					}
+
 					//anime
 					case "!8ball":
 					{
