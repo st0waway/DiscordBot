@@ -118,6 +118,13 @@ namespace DiscordBot
 							break;
 						}
 
+					case "!shibe":
+						{
+							var text = Shibe.GetShibeImage();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
 					//anime
 					case "!8ball":
 						{

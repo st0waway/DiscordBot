@@ -25,7 +25,8 @@ namespace DiscordBot.Helper
 						   "!duck - get a random image of a duck \n" +
 						   "!fox - get a random image of a fox \n" +
                            "!meowfact - get a random fact about cats\n" +
-                           "!quokka - get a random image of a quokka\n\r" +
+                           "!quokka - get a random image of a quokka\n" +
+                           "!shibe - get a random image of a shibe\n\r" +
 						   "Anime: \n" +
                            "!baka - get an animated image of a person screaming baka \n" +
                            "!dice - roll a die \n" +
