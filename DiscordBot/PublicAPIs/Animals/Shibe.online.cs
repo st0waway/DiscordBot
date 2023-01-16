@@ -1,5 +1,7 @@
 ﻿using DiscordBot.Helper;
 
+using Newtonsoft.Json;
+
 namespace DiscordBot.PublicAPIs.Animals
 {
 	internal class Shibe
@@ -8,8 +10,8 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://shibe.online/api/shibes";
 			var response = Utils.GetWebResponse(url);
-			response = response.Substring(2, response.Length - 4);
-			return response;
+			var deserializedResponse = JsonConvert.DeserializeObject<string[]>(response);
+			return deserializedResponse[0];
 		}
 	}
 }
