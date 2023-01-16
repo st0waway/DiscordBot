@@ -2,6 +2,6 @@
 {
 	internal class QuokkaImageResponse
 	{
-		public string Image { get; set; }
+		public string? Image { get; set; }
 	}
 }
