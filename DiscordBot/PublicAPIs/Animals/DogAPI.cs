@@ -10,7 +10,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://dog-api.kinduff.com/api/facts";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<DogFact>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<DogFactResponse>(response);
 			return deserializedResponse.Facts[0];
 		}
 	}

@@ -10,7 +10,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://random-d.uk/api/v2/random";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<RandomDuck>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<DuckImageResponse>(response);
 			return deserializedResponse.Url;
 		}
 	}

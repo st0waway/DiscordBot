@@ -17,7 +17,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://cataas.com/cat?json=true";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<CataasResponse>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<CataasImageResponse>(response);
 			return "https://cataas.com" + deserializedResponse.Url;
 		}
 	}

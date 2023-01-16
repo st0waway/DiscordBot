@@ -10,7 +10,7 @@ namespace DiscordBot.PublicAPIs.Personality
 		{
 			var url = "https://api.adviceslip.com/advice";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<AdviceSlip>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<AdviceSlipResponse>(response);
 			return deserializedResponse.Slip.Advice;
 		}
 	}

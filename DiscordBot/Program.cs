@@ -76,6 +76,13 @@ namespace DiscordBot
 							break;
 						}
 
+					case "!dog":
+						{
+							var text = RandomDogAPI.RandomDog();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
 					case "!dogfact":
 						{
 							var text = DogAPI.DogFact();
@@ -98,19 +105,26 @@ namespace DiscordBot
 						}
 
 					case "!meowfact":
-					{
-						var text = MeowFacts.MeowFact();
-						msg.Channel.SendMessageAsync(text);
-						break;
-					}
+						{
+							var text = MeowFacts.MeowFact();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
+					case "!quokka":
+						{
+							var text = Quokkapics.GetQuokkaPic();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
 
 					//anime
 					case "!8ball":
-					{
-						var text = CatboyAPI.EightBall();
-						msg.Channel.SendMessageAsync(text);
-						break;
-					}
+						{
+							var text = CatboyAPI.EightBall();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
 
 					case "!baka":
 						{
@@ -128,12 +142,12 @@ namespace DiscordBot
 
 					//personality
 					case "!advice":
-					{
-						var text = AdviceSlipAPI.Advice();
-						msg.Channel.SendMessageAsync(text);
-						break;
+						{
+							var text = AdviceSlipAPI.Advice();
+							msg.Channel.SendMessageAsync(text);
+							break;
 
-					}
+						}
 
 					case "!affirmation":
 						{

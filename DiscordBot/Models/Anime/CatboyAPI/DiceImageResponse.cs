@@ -1,6 +1,6 @@
 ﻿namespace DiscordBot.Models.Anime.CatboyAPI
 {
-    internal class Dice
+    internal class DiceImageResponse
     {
         public string? Response { get; set; }
         public string? Url { get; set; }

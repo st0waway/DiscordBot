@@ -1,6 +1,6 @@
 ﻿namespace DiscordBot.Models.Animals.Cataas
 {
-	internal class CataasResponse
+	internal class CataasImageResponse
 	{
 		public string[] Tags { get; set; }
 		public string CreatedAt { get; set; }

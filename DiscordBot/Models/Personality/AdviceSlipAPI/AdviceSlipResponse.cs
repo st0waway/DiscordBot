@@ -1,6 +1,6 @@
 ﻿namespace DiscordBot.Models.Personality.AdviceSlipAPI
 {
-    internal class AdviceSlip
+    internal class AdviceSlipResponse
     {
         public Slip? Slip { get; set; }
 

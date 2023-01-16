@@ -17,7 +17,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://meowfacts.herokuapp.com/";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<MeowFact>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<MeowFactResponse>(response);
 			return deserializedResponse.data[0];
 		}
 	}

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DiscordBot.Models.Animals.MeowFacts
 {
-	internal class MeowFact
+	internal class MeowFactResponse
 	{
 		public string[] data { get; set; }
 	}

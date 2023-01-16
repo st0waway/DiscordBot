@@ -10,7 +10,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		{
 			var url = "https://randomfox.ca/floof/";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<RandomFox>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<FoxImageResponse>(response);
 			return deserializedResponse.Image;
 		}
 	}

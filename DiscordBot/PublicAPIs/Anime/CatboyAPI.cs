@@ -10,7 +10,7 @@ public class CatboyAPI
 	{
 		var url = "https://api.catboys.com/baka";
 		var response = Utils.GetWebResponse(url);
-		var baka = JsonConvert.DeserializeObject<Baka>(response);
+		var baka = JsonConvert.DeserializeObject<BakaGifReposnse>(response);
 		return baka.Url;
 	}
 
@@ -18,7 +18,7 @@ public class CatboyAPI
 	{
 		var url = "https://api.catboys.com/dice";
 		var response = Utils.GetWebResponse(url);
-		var dice = JsonConvert.DeserializeObject<Dice>(response);
+		var dice = JsonConvert.DeserializeObject<DiceImageResponse>(response);
 		return dice.Url;
 	}
 
@@ -26,7 +26,7 @@ public class CatboyAPI
 	{
 		var url = "https://api.catboys.com/8ball";
 		var response = Utils.GetWebResponse(url);
-		var eightBall = JsonConvert.DeserializeObject<Dice>(response);
+		var eightBall = JsonConvert.DeserializeObject<DiceImageResponse>(response);
 		return eightBall.Url;
 	}
 }

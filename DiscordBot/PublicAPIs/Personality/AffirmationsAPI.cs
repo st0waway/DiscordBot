@@ -10,7 +10,7 @@ namespace DiscordBot.PublicAPIs.Personality
 		{
 			var url = "https://www.affirmations.dev/";
 			var response = Utils.GetWebResponse(url);
-			var deserializedResponse = JsonConvert.DeserializeObject<Affirmations>(response);
+			var deserializedResponse = JsonConvert.DeserializeObject<AffirmationResponse>(response);
 			return deserializedResponse.Affirmation;
 		}
 	}
