@@ -5,9 +5,11 @@ namespace DiscordBot.Helper
     public class Utils
     {
         const double poundsPerKg = 2.2046226218;
+        const double centimetersPerInch = 2.54;
 
 
-        public static string GetWebResponse(string url)
+
+		public static string GetWebResponse(string url)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
             var httpWebResponse = (HttpWebResponse)request.GetResponse();
@@ -18,27 +20,29 @@ namespace DiscordBot.Helper
 
         public static string GetCommands()
         {
-            var helpText = "Animals: \n" +
-                           "!cat - get a random image of a cat \n" +
-                           "!dog - get a random image of a dog \n" +
-						   "!dogfact - get a random dog fact \n" +
-						   "!duck - get a random image of a duck \n" +
-						   "!fox - get a random image of a fox \n" +
-                           "!meowfact - get a random fact about cats\n" +
-                           "!quokka - get a random image of a quokka\n" +
-                           "!shibe - get a random image of a shibe\n\r" +
-						   "Anime: \n" +
-                           "!baka - get an animated image of a person screaming baka \n" +
-                           "!dice - roll a die \n" +
-                           "!8ball - roll an 8ball \n\r" +
-                           "Personality: \n" +
-                           "!affirmation - get an affirmation \n" +
-                           "!advice - get an advice slip \n\r" +
-                           "Conversion: \n" +
-						   "!kg x - get the amount of pounds in x kgs \n" +
-                           "!pounds x - get the amount of kgs in x pounds \n" +
-                           "!с x - get the fahrenheit equivalent temperature of x \n" +
-                           "!f x - get the celsius equivalent temperature of x \n";
+	        var helpText = "Animals: \n" +
+	                       "!cat - get a random image of a cat \n" +
+	                       "!dog - get a random image of a dog \n" +
+	                       "!dogfact - get a random dog fact \n" +
+	                       "!duck - get a random image of a duck \n" +
+	                       "!fox - get a random image of a fox \n" +
+	                       "!meowfact - get a random fact about cats\n" +
+	                       "!quokka - get a random image of a quokka\n" +
+	                       "!shibe - get a random image of a shibe\n\r" +
+	                       "Anime: \n" +
+	                       "!baka - get an animated image of a person screaming baka \n" +
+	                       "!dice - roll a die \n" +
+	                       "!8ball - roll an 8ball \n\r" +
+	                       "Personality: \n" +
+	                       "!affirmation - get an affirmation \n" +
+	                       "!advice - get an advice slip \n\r" +
+	                       "Conversion: \n" +
+	                       "!kg x - get the amount of pounds in x kgs \n" +
+	                       "!pounds x - get the amount of kgs in x pounds \n" +
+	                       "!с x - get the fahrenheit equivalent temperature of x \n" +
+	                       "!f x - get the celsius equivalent temperature of x \n" +
+						   "!cm x - get the inch equivalent length of x \n" +
+						   "!inch x - get the cm equivalent length of x \n";
 			return helpText;
         }
 
@@ -56,12 +60,26 @@ namespace DiscordBot.Helper
 
         public static double FahrenheitToCelsiusConversion(double fahrenheit)
         {
-	        return (fahrenheit - 32) * 5 / 9;
+			var celsius = (fahrenheit - 32) * 5 / 9;
+			return celsius;
         }
 
         public static double CelsiusToFahrenheitConversion(double celsius)
         {
-	        return (celsius * 1.8) + 32;
+			var fahrenheit = (celsius * 1.8) + 32;
+			return fahrenheit;
+        }
+
+        public static double InchToCmConversion(double inch)
+        {
+	        var cm = inch * centimetersPerInch;
+	        return cm;
+        }
+
+        public static double CmToInchConversion(double cm)
+        {
+            var inch = cm / centimetersPerInch;
+            return inch;
         }
     }
 }

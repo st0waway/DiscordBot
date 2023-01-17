@@ -43,6 +43,7 @@ namespace DiscordBot
 			Console.WriteLine(msg.Author);
 			Console.WriteLine(msg.Content);
 
+			//conversions
 			if (!msg.Author.IsBot)
 			{
 				if (msg.Content.Contains("!kg"))
@@ -60,22 +61,37 @@ namespace DiscordBot
 				}
 
 
-				if (msg.Content.Contains("!f"))
+				if (msg.Content.Contains("!fahrenheit"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
 					var celsius = Utils.FahrenheitToCelsiusConversion(fahrenheit);
 					msg.Channel.SendMessageAsync($"{Math.Round(celsius, 1)}°C");
 				}
 
-				if (msg.Content.Contains("!c"))
+				if (msg.Content.Contains("!celsius "))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
 					var fahrenheit = Utils.CelsiusToFahrenheitConversion(celsius);
 					msg.Channel.SendMessageAsync($"{Math.Round(fahrenheit, 1)}°F");
 				}
 
+				if (msg.Content.Contains("!cm"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var cm);
+					var inches = Utils.CmToInchConversion(cm);
+					msg.Channel.SendMessageAsync($"{Math.Round(inches, 2)}inches");
+				}
+
+				if (msg.Content.Contains("!inches"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var inches);
+					var cm = Utils.InchToCmConversion(inches);
+					msg.Channel.SendMessageAsync($"{Math.Round(cm, 2)}cm");
+				}
+
 				switch (msg.Content)
 				{
+					//commands
 					case "!commands":
 						{
 							var text = Utils.GetCommands();
