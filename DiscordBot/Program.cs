@@ -59,6 +59,21 @@ namespace DiscordBot
 					msg.Channel.SendMessageAsync($"{kg} kg");
 				}
 
+
+				if (msg.Content.Contains("!f"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
+					var celsius = Utils.FahrenheitToCelsiusConversion(fahrenheit);
+					msg.Channel.SendMessageAsync($"{Math.Round(celsius, 1)}°C");
+				}
+
+				if (msg.Content.Contains("!c"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
+					var fahrenheit = Utils.CelsiusToFahrenheitConversion(celsius);
+					msg.Channel.SendMessageAsync($"{Math.Round(fahrenheit, 1)}°F");
+				}
+
 				switch (msg.Content)
 				{
 					case "!commands":

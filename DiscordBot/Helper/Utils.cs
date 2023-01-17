@@ -36,8 +36,10 @@ namespace DiscordBot.Helper
                            "!advice - get an advice slip \n\r" +
                            "Conversion: \n" +
 						   "!kg x - get the amount of pounds in x kgs \n" +
-                           "!pounds x - get the amount of kgs in x pounds \n";
-            return helpText;
+                           "!pounds x - get the amount of kgs in x pounds \n" +
+                           "!с x - get the fahrenheit equivalent temperature of x \n" +
+                           "!f x - get the celsius equivalent temperature of x \n";
+			return helpText;
         }
 
         public static double PoundsToKgConversion(int pounds)
@@ -52,6 +54,14 @@ namespace DiscordBot.Helper
             return pounds;
         }
 
+        public static double FahrenheitToCelsiusConversion(double fahrenheit)
+        {
+	        return (fahrenheit - 32) * 5 / 9;
+        }
 
+        public static double CelsiusToFahrenheitConversion(double celsius)
+        {
+	        return (celsius * 1.8) + 32;
+        }
     }
 }
