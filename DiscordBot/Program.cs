@@ -68,7 +68,7 @@ namespace DiscordBot
 					msg.Channel.SendMessageAsync($"{Math.Round(celsius, 1)}°C");
 				}
 
-				if (msg.Content.Contains("!celsius "))
+				if (msg.Content.Contains("!celsius"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
 					var fahrenheit = Utils.CelsiusToFahrenheitConversion(celsius);

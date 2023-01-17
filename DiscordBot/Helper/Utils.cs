@@ -39,10 +39,10 @@ namespace DiscordBot.Helper
 	                       "Conversion: \n" +
 	                       "!kg x - get the amount of pounds in x kgs \n" +
 	                       "!pounds x - get the amount of kgs in x pounds \n" +
-	                       "!с x - get the fahrenheit equivalent temperature of x \n" +
-	                       "!f x - get the celsius equivalent temperature of x \n" +
+	                       "!сelsius x - get the fahrenheit equivalent temperature of x \n" +
+	                       "!fahrenheit x - get the celsius equivalent temperature of x \n" +
 						   "!cm x - get the inch equivalent length of x \n" +
-						   "!inch x - get the cm equivalent length of x \n";
+						   "!inches x - get the cm equivalent length of x \n";
 			return helpText;
         }
 
