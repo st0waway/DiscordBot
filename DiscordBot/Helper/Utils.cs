@@ -41,8 +41,9 @@ namespace DiscordBot.Helper
 	                       "!pounds x - get the amount of kgs in x pounds \n" +
 	                       "!сelsius x - get the fahrenheit equivalent temperature of x \n" +
 	                       "!fahrenheit x - get the celsius equivalent temperature of x \n" +
-						   "!cm x - get the inch equivalent length of x \n" +
-						   "!inches x - get the cm equivalent length of x \n";
+	                       "!cm x - get the inch equivalent length of x \n" +
+	                       "!inches x - get the cm equivalent length of x \n" +
+	                       "!timestow - get st0waway's time\n";
 			return helpText;
         }
 
@@ -80,6 +81,12 @@ namespace DiscordBot.Helper
         {
             var inch = cm / centimetersPerInch;
             return inch;
+        }
+
+        public static string StowawayTime()
+        {
+	        var time = DateTime.Now.ToString();
+            return time;
         }
     }
 }

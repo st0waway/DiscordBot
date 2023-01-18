@@ -99,6 +99,14 @@ namespace DiscordBot
 							break;
 						}
 
+					//time
+					case "!timestow":
+						{
+							var text = Utils.StowawayTime();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
 					//animals
 					case "!cat":
 						{
