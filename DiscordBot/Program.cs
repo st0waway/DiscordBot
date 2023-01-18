@@ -102,7 +102,14 @@ namespace DiscordBot
 					//time
 					case "!timestow":
 						{
-							var text = Utils.StowawayTime();
+							var text = Utils.TimeStowaway();
+							msg.Channel.SendMessageAsync(text);
+							break;
+						}
+
+					case "!timesashimi":
+						{
+							var text = Utils.TimeSashimi();
 							msg.Channel.SendMessageAsync(text);
 							break;
 						}
