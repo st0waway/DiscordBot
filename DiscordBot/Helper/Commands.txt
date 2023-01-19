@@ -29,3 +29,4 @@ Time:
 !timestow - get st0waway's time
 !timesashimi - get sashimi's time
 !timeaniq - get aniq's time
+!timewood - get wood's time

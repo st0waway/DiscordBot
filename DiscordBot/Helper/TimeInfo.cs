@@ -23,5 +23,11 @@ namespace DiscordBot.Helper
 				TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString(CultureInfo.InvariantCulture);
 			return time;
 		}
+		public static string TimeWood()
+		{
+			var time = TimeZoneInfo.ConvertTime(DateTime.Now,
+				TimeZoneInfo.FindSystemTimeZoneById("GMT Standard Time")).ToString(CultureInfo.InvariantCulture);
+			return time;
+		}
 	}
 }
