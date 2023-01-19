@@ -39,10 +39,6 @@ namespace DiscordBot
 
 		private Task CommandsHandler(SocketMessage msg)
 		{
-			Console.WriteLine(msg.Timestamp);
-			Console.WriteLine(msg.Author);
-			Console.WriteLine(msg.Content);
-
 			//conversions
 			if (!msg.Author.IsBot)
 			{
@@ -50,43 +46,54 @@ namespace DiscordBot
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var kg);
 					var pounds = Utils.KgToPoundsConversion(kg);
-					msg.Channel.SendMessageAsync($"{pounds} pounds");
+					var text = $"{pounds} pounds";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
 
 				if (msg.Content.Contains("!pounds"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var pounds);
 					var kg = Utils.PoundsToKgConversion(pounds);
-					msg.Channel.SendMessageAsync($"{kg} kg");
+					var text = $"{kg} kg";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
-
-
+				
 				if (msg.Content.Contains("!fahrenheit"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
 					var celsius = Utils.FahrenheitToCelsiusConversion(fahrenheit);
-					msg.Channel.SendMessageAsync($"{Math.Round(celsius, 1)}°C");
+					var text = $"{Math.Round(celsius, 1)}°C";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
 
 				if (msg.Content.Contains("!celsius"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
 					var fahrenheit = Utils.CelsiusToFahrenheitConversion(celsius);
-					msg.Channel.SendMessageAsync($"{Math.Round(fahrenheit, 1)}°F");
+					var text = $"{Math.Round(fahrenheit, 1)}°F";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
 
 				if (msg.Content.Contains("!cm"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var cm);
 					var inches = Utils.CmToInchConversion(cm);
-					msg.Channel.SendMessageAsync($"{Math.Round(inches, 2)}inches");
+					var text = $"{Math.Round(inches, 2)}inches";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
 
 				if (msg.Content.Contains("!inches"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var inches);
 					var cm = Utils.InchToCmConversion(inches);
-					msg.Channel.SendMessageAsync($"{Math.Round(cm, 2)}cm");
+					var text = $"{Math.Round(cm, 2)}cm";
+					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+					msg.Channel.SendMessageAsync(text);
 				}
 
 				switch (msg.Content)
@@ -96,6 +103,7 @@ namespace DiscordBot
 						{
 							var text = Utils.GetCommands();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -104,6 +112,7 @@ namespace DiscordBot
 						{
 							var text = Utils.TimeStowaway();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -111,21 +120,24 @@ namespace DiscordBot
 						{
 							var text = Utils.TimeSashimi();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
 					case "!timeaniq":
-					{
-						var text = Utils.TimeAniq();
-						msg.Channel.SendMessageAsync(text);
-						break;
-					}
+						{
+							var text = Utils.TimeAniq();
+							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
+							break;
+						}
 
 					//animals
 					case "!cat":
 						{
 							var text = Cataas.GetCatImage();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -133,6 +145,7 @@ namespace DiscordBot
 						{
 							var text = RandomDogAPI.RandomDog();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -140,6 +153,7 @@ namespace DiscordBot
 						{
 							var text = DogAPI.DogFact();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -147,6 +161,7 @@ namespace DiscordBot
 						{
 							var text = RandomDuckAPIv2.RandomDuck();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -154,6 +169,7 @@ namespace DiscordBot
 						{
 							var text = RandomFoxAPI.RandomFox();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -161,6 +177,7 @@ namespace DiscordBot
 						{
 							var text = MeowFacts.MeowFact();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -168,6 +185,7 @@ namespace DiscordBot
 						{
 							var text = Quokkapics.GetQuokkaPic();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -175,6 +193,7 @@ namespace DiscordBot
 						{
 							var text = Shibe.GetShibeImage();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -183,6 +202,7 @@ namespace DiscordBot
 						{
 							var text = CatboyAPI.EightBall();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -190,6 +210,7 @@ namespace DiscordBot
 						{
 							var text = CatboyAPI.Baka();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -197,6 +218,7 @@ namespace DiscordBot
 						{
 							var text = CatboyAPI.Dice();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
@@ -205,6 +227,7 @@ namespace DiscordBot
 						{
 							var text = AdviceSlipAPI.Advice();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 
 						}
@@ -213,6 +236,7 @@ namespace DiscordBot
 						{
 							var text = AffirmationsAPI.Affirmation();
 							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
 						}
 
