@@ -14,14 +14,12 @@ namespace DiscordBot.Helper
 		{
 			var request = (HttpWebRequest)WebRequest.Create(url);
 			var httpWebResponse = (HttpWebResponse)request.GetResponse();
-
 			using StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream());
 			return streamReader.ReadToEnd();
 		}
 
 		public static string GetCommands()
 		{
-
 			var reader = new StreamReader("D:\\Dev\\DiscordBot\\DiscordBot\\Helper\\Commands.txt");
 			var helpText = reader.ReadToEnd();
 			return helpText;
