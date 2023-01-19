@@ -45,7 +45,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!kg"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var kg);
-					var pounds = Utils.KgToPoundsConversion(kg);
+					var pounds = UnitConversions.KgToPoundsConversion(kg);
 					var text = $"{pounds} pounds";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -54,7 +54,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!pounds"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var pounds);
-					var kg = Utils.PoundsToKgConversion(pounds);
+					var kg = UnitConversions.PoundsToKgConversion(pounds);
 					var text = $"{kg} kg";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -63,7 +63,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!fahrenheit"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
-					var celsius = Utils.FahrenheitToCelsiusConversion(fahrenheit);
+					var celsius = UnitConversions.FahrenheitToCelsiusConversion(fahrenheit);
 					var text = $"{Math.Round(celsius, 1)}°C";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -72,7 +72,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!celsius"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
-					var fahrenheit = Utils.CelsiusToFahrenheitConversion(celsius);
+					var fahrenheit = UnitConversions.CelsiusToFahrenheitConversion(celsius);
 					var text = $"{Math.Round(fahrenheit, 1)}°F";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -81,7 +81,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!cm"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var cm);
-					var inches = Utils.CmToInchConversion(cm);
+					var inches = UnitConversions.CmToInchConversion(cm);
 					var text = $"{Math.Round(inches, 2)}inches";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -90,7 +90,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!inches"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var inches);
-					var cm = Utils.InchToCmConversion(inches);
+					var cm = UnitConversions.InchToCmConversion(inches);
 					var text = $"{Math.Round(cm, 2)}cm";
 					Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 					msg.Channel.SendMessageAsync(text);
@@ -110,7 +110,7 @@ namespace DiscordBot
 					//time
 					case "!timestow":
 						{
-							var text = Utils.TimeStowaway();
+							var text = TimeInfo.TimeStowaway();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
@@ -118,7 +118,7 @@ namespace DiscordBot
 
 					case "!timesashimi":
 						{
-							var text = Utils.TimeSashimi();
+							var text = TimeInfo.TimeSashimi();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;
@@ -126,7 +126,7 @@ namespace DiscordBot
 
 					case "!timeaniq":
 						{
-							var text = Utils.TimeAniq();
+							var text = TimeInfo.TimeAniq();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Author.ToString(), msg.Channel.ToString()!, text);
 							break;

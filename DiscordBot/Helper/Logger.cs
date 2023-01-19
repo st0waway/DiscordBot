@@ -1,7 +1,5 @@
 ﻿using System.Configuration;
 
-using static System.Net.Mime.MediaTypeNames;
-
 namespace DiscordBot.Helper
 {
 	public static class Logger
