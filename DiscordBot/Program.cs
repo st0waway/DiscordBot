@@ -114,6 +114,13 @@ namespace DiscordBot
 							break;
 						}
 
+					case "!timeaniq":
+					{
+						var text = Utils.TimeAniq();
+						msg.Channel.SendMessageAsync(text);
+						break;
+					}
+
 					//animals
 					case "!cat":
 						{

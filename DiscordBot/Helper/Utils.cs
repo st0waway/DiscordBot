@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace DiscordBot.Helper
 {
@@ -94,7 +95,13 @@ namespace DiscordBot.Helper
 			var time = TimeZoneInfo.ConvertTime(DateTime.Now,
 				TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time")).ToString();
 			return time;
+		}
 
+		public static string TimeAniq()
+		{
+			var time = TimeZoneInfo.ConvertTime(DateTime.Now,
+			TimeZoneInfo.FindSystemTimeZoneById("Tokyo Standard Time")).ToString();
+			return time;
 		}
 	}
 }
