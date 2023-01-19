@@ -21,30 +21,9 @@ namespace DiscordBot.Helper
 
 		public static string GetCommands()
 		{
-			var helpText = "Animals: \n" +
-						   "!cat - get a random image of a cat \n" +
-						   "!dog - get a random image of a dog \n" +
-						   "!dogfact - get a random dog fact \n" +
-						   "!duck - get a random image of a duck \n" +
-						   "!fox - get a random image of a fox \n" +
-						   "!meowfact - get a random fact about cats\n" +
-						   "!quokka - get a random image of a quokka\n" +
-						   "!shibe - get a random image of a shibe\n\r" +
-						   "Anime: \n" +
-						   "!baka - get an animated image of a person screaming baka \n" +
-						   "!dice - roll a die \n" +
-						   "!8ball - roll an 8ball \n\r" +
-						   "Personality: \n" +
-						   "!affirmation - get an affirmation \n" +
-						   "!advice - get an advice slip \n\r" +
-						   "Conversion: \n" +
-						   "!kg x - get the amount of pounds in x kgs \n" +
-						   "!pounds x - get the amount of kgs in x pounds \n" +
-						   "!сelsius x - get the fahrenheit equivalent temperature of x \n" +
-						   "!fahrenheit x - get the celsius equivalent temperature of x \n" +
-						   "!cm x - get the inch equivalent length of x \n" +
-						   "!inches x - get the cm equivalent length of x \n" +
-						   "!timestow - get st0waway's time\n";
+
+			var reader = new StreamReader("D:\\Dev\\DiscordBot\\DiscordBot\\Helper\\Commands.txt");
+			var helpText = reader.ReadToEnd();
 			return helpText;
 		}
 

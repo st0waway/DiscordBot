@@ -1,0 +1,31 @@
+﻿Animals:
+!cat - get a random image of a cat
+!dog - get a random image of a dog
+!dogfact - get a random dog fact
+!duck - get a random image of a duck
+!fox - get a random image of a fox
+!meowfact - get a random fact about cats
+!quokka - get a random image of a quokka
+!shibe - get a random image of a shibe
+
+Anime:
+!baka - get an animated image of a person screaming baka
+!dice - roll a die
+!8ball - roll an 8ball 
+
+Personality:
+!affirmation - get an affirmation
+!advice - get an advice slip 
+
+Conversion:
+!kg x - get the amount of pounds in x kgs
+!pounds x - get the amount of kgs in x pounds
+!сelsius x - get the fahrenheit equivalent temperature of x
+!fahrenheit x - get the celsius equivalent temperature of x
+!cm x - get the inch equivalent length of x
+!inches x - get the cm equivalent length of x 
+
+Time:
+!timestow - get st0waway's time
+!timesashimi - get sashimi's time
+!timeaniq - get aniq's time
