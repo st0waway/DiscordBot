@@ -5,40 +5,40 @@
 		const double PoundsPerKg = 2.2046226218;
 		const double CentimetersPerInch = 2.54;
 
-		public static double PoundsToKgConversion(int pounds)
+		public static string PoundsToKgConversion(int pounds)
 		{
 			var kg = Math.Round(pounds / PoundsPerKg, 2);
-			return kg;
+			return $"{kg} kg";
 		}
 
-		public static double KgToPoundsConversion(int kgs)
+		public static string KgToPoundsConversion(int kgs)
 		{
 			var pounds = Math.Round(kgs * PoundsPerKg, 0);
-			return pounds;
+			return $"{pounds} pounds";
 		}
 
-		public static double FahrenheitToCelsiusConversion(double fahrenheit)
+		public static string FahrenheitToCelsiusConversion(double fahrenheit)
 		{
 			var celsius = (fahrenheit - 32) * 5 / 9;
-			return celsius;
+			return $"{Math.Round(celsius, 1)}°C";
 		}
 
-		public static double CelsiusToFahrenheitConversion(double celsius)
+		public static string CelsiusToFahrenheitConversion(double celsius)
 		{
 			var fahrenheit = (celsius * 1.8) + 32;
-			return fahrenheit;
+			return $"{Math.Round(fahrenheit, 1)}°F";
 		}
 
-		public static double InchToCmConversion(double inch)
+		public static string InchToCmConversion(double inch)
 		{
 			var cm = inch * CentimetersPerInch;
-			return cm;
+			return $"{Math.Round(cm, 2)}cm";
 		}
 
-		public static double CmToInchConversion(double cm)
+		public static string CmToInchConversion(double cm)
 		{
 			var inch = cm / CentimetersPerInch;
-			return inch;
+			return $"{Math.Round(inch, 2)}inches";
 		}
 	}
 }
