@@ -90,6 +90,15 @@ namespace DiscordBot
 					Logger.WriteLog(msg.Content, text);
 				}
 
+				if (msg.Content.Contains("!placekitten"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
+					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+					var text = Helper.PlaceX.PlaceKitten(width, height);
+					msg.Channel.SendMessageAsync(text);
+					Logger.WriteLog(msg.Content, text);
+				}
+
 				switch (msg.Content)
 				{
 					//commands
