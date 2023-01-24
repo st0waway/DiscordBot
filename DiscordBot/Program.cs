@@ -90,6 +90,24 @@ namespace DiscordBot
 					Logger.WriteLog(msg.Content, text);
 				}
 
+				if (msg.Content.Contains("!placebear"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
+					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+					var text = Helper.PlaceX.PlaceBear(width, height);
+					msg.Channel.SendMessageAsync(text);
+					Logger.WriteLog(msg.Content, text);
+				}
+
+				if (msg.Content.Contains("!placedog"))
+				{
+					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
+					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+					var text = Helper.PlaceX.PlaceDog(width, height);
+					msg.Channel.SendMessageAsync(text);
+					Logger.WriteLog(msg.Content, text);
+				}
+
 				if (msg.Content.Contains("!placekitten"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
