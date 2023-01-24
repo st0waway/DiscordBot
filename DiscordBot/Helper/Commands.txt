@@ -5,6 +5,9 @@
 !duck - get a random image of a duck
 !fox - get a random image of a fox
 !meowfact - get a random fact about cats
+!placebear x y - get an image of a bear with x width and y height
+!placedog x y - get an image of a dog with x width and y height
+!placekitten x y - get an image of a kitten with x width and y height
 !quokka - get a random image of a quokka
 !shibe - get a random image of a shibe
 
