@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Personality
 {
     internal class AdviceSlipAPI
 	{
-		public static string Advice()
+		public static string GetAdvice()
 		{
 			var url = "https://api.adviceslip.com/advice";
 			var response = Utils.GetWebResponse(url);

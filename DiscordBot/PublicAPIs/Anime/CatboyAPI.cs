@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Anime;
 
 public class CatboyAPI
 {
-	public static string Baka()
+	public static string GetBakaGif()
 	{
 		var url = "https://api.catboys.com/baka";
 		var response = Utils.GetWebResponse(url);
@@ -14,7 +14,7 @@ public class CatboyAPI
 		return baka.Url;
 	}
 
-	public static string Dice()
+	public static string GetDice()
 	{
 		var url = "https://api.catboys.com/dice";
 		var response = Utils.GetWebResponse(url);
@@ -22,7 +22,7 @@ public class CatboyAPI
 		return dice.Url;
 	}
 
-	public static string EightBall()
+	public static string GetEightBallImage()
 	{
 		var url = "https://api.catboys.com/8ball";
 		var response = Utils.GetWebResponse(url);

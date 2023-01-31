@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Animals
 {
 	internal class RandomDogAPI
 	{
-		public static string RandomDog()
+		public static string GetRandomDog()
 		{
 			var url = "https://random.dog/woof.json";
 			var response = Utils.GetWebResponse(url);

@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Animals
 {
 	internal class DogAPI
 	{
-		public static string DogFact()
+		public static string GetDogFact()
 		{
 			var url = "https://dog-api.kinduff.com/api/facts";
 			var response = Utils.GetWebResponse(url);

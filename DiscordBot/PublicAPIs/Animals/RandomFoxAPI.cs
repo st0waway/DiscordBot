@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Animals
 {
     internal class RandomFoxAPI
 	{
-		public static string RandomFox()
+		public static string GetRandomFox()
 		{
 			var url = "https://randomfox.ca/floof/";
 			var response = Utils.GetWebResponse(url);

@@ -174,7 +174,7 @@ namespace DiscordBot
 
 					case "!dog":
 						{
-							var text = RandomDogAPI.RandomDog();
+							var text = RandomDogAPI.GetRandomDog();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -182,7 +182,7 @@ namespace DiscordBot
 
 					case "!dogfact":
 						{
-							var text = DogAPI.DogFact();
+							var text = DogAPI.GetDogFact();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -190,7 +190,7 @@ namespace DiscordBot
 
 					case "!duck":
 						{
-							var text = RandomDuckAPIv2.RandomDuck();
+							var text = RandomDuckAPIv2.GetRandomDuck();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -198,7 +198,7 @@ namespace DiscordBot
 
 					case "!fox":
 						{
-							var text = RandomFoxAPI.RandomFox();
+							var text = RandomFoxAPI.GetRandomFox();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -206,7 +206,7 @@ namespace DiscordBot
 
 					case "!meowfact":
 						{
-							var text = MeowFacts.MeowFact();
+							var text = MeowFacts.GetMeowFact();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -231,7 +231,7 @@ namespace DiscordBot
 					//anime
 					case "!8ball":
 						{
-							var text = CatboyAPI.EightBall();
+							var text = CatboyAPI.GetEightBallImage();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -239,7 +239,7 @@ namespace DiscordBot
 
 					case "!baka":
 						{
-							var text = CatboyAPI.Baka();
+							var text = CatboyAPI.GetBakaGif();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -247,7 +247,7 @@ namespace DiscordBot
 
 					case "!dice":
 						{
-							var text = CatboyAPI.Dice();
+							var text = CatboyAPI.GetDice();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -256,7 +256,7 @@ namespace DiscordBot
 					//entertainment
 					case "!chuck":
 						{
-							var text = ChuckNorris.ChuckJoke();
+							var text = ChuckNorris.GetChuckJoke();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -265,7 +265,7 @@ namespace DiscordBot
 					//personality
 					case "!advice":
 						{
-							var text = AdviceSlipAPI.Advice();
+							var text = AdviceSlipAPI.GetAdvice();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -274,7 +274,7 @@ namespace DiscordBot
 
 					case "!affirmation":
 						{
-							var text = AffirmationsAPI.Affirmation();
+							var text = AffirmationsAPI.GetAffirmation();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;

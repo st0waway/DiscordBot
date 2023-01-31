@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Entertainment
 {
     internal class ChuckNorris
     {
-	    public static string ChuckJoke()
+	    public static string GetChuckJoke()
 	    {
 		    var url = "https://api.chucknorris.io/jokes/random";
 		    var response = Utils.GetWebResponse(url);

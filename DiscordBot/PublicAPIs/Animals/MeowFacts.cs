@@ -6,7 +6,7 @@ namespace DiscordBot.PublicAPIs.Animals
 {
 	internal class MeowFacts
 	{
-		public static string MeowFact()
+		public static string GetMeowFact()
 		{
 			var url = "https://meowfacts.herokuapp.com/";
 			var response = Utils.GetWebResponse(url);
