@@ -1,5 +1,5 @@
-﻿using DiscordBot.Helper;
-using DiscordBot.Models.Animals.RandomFoxAPI;
+﻿using DiscordBot.Models.Animals.RandomFoxAPI;
+using DiscordBot.Utils;
 using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Animals
@@ -9,7 +9,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		public static string GetRandomFox()
 		{
 			var url = "https://randomfox.ca/floof/";
-			var response = Utils.GetWebResponse(url);
+			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<FoxImageResponse>(response);
 			return deserializedResponse.Image;
 		}

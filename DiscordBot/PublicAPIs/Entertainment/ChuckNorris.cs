@@ -1,5 +1,5 @@
-﻿using DiscordBot.Helper;
-using DiscordBot.Models.Entertainment.ChuckNorrisIO;
+﻿using DiscordBot.Models.Entertainment.ChuckNorrisIO;
+using DiscordBot.Utils;
 using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Entertainment
@@ -9,7 +9,7 @@ namespace DiscordBot.PublicAPIs.Entertainment
 	    public static string GetChuckJoke()
 	    {
 		    var url = "https://api.chucknorris.io/jokes/random";
-		    var response = Utils.GetWebResponse(url);
+		    var response = WebRequestHandler.GetWebResponse(url);
 		    var deserializedResponse = JsonConvert.DeserializeObject<ChuckJokeResponse>(response);
 		    return deserializedResponse.Value;
 	    }

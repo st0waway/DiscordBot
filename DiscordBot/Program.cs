@@ -2,17 +2,17 @@
 
 using Discord;
 using Discord.WebSocket;
-
-using DiscordBot.Helper;
-using DiscordBot.Helper.Conversions;
+using DiscordBot.Commands;
+using DiscordBot.Commands.Conversions;
 using DiscordBot.PublicAPIs.Animals;
 using DiscordBot.PublicAPIs.Anime;
 using DiscordBot.PublicAPIs.Entertainment;
 using DiscordBot.PublicAPIs.Personality;
+using DiscordBot.Utils;
 
 namespace DiscordBot
 {
-	internal class Program
+    internal class Program
 	{
 		static void Main(string[] args) => new Program().MainAsync().GetAwaiter().GetResult();
 
@@ -96,7 +96,7 @@ namespace DiscordBot
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
 					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
-					var text = Helper.PlaceX.PlaceBear(width, height);
+					var text = PlaceX.PlaceBear(width, height);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -105,7 +105,7 @@ namespace DiscordBot
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
 					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
-					var text = Helper.PlaceX.PlaceDog(width, height);
+					var text = PlaceX.PlaceDog(width, height);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -114,7 +114,7 @@ namespace DiscordBot
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var width);
 					Int32.TryParse(msg.Content.Split(' ')[2], out var height);
-					var text = Helper.PlaceX.PlaceKitten(width, height);
+					var text = PlaceX.PlaceKitten(width, height);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -124,7 +124,7 @@ namespace DiscordBot
 					//commands
 					case "!commands":
 					{
-						var text = Commands.GetCommands();
+						var text = Commands.Commands.GetCommands();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;

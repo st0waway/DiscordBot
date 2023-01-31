@@ -1,5 +1,5 @@
-﻿using DiscordBot.Helper;
-using DiscordBot.Models.Personality.AdviceSlipAPI;
+﻿using DiscordBot.Models.Personality.AdviceSlipAPI;
+using DiscordBot.Utils;
 using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Personality
@@ -9,7 +9,7 @@ namespace DiscordBot.PublicAPIs.Personality
 		public static string GetAdvice()
 		{
 			var url = "https://api.adviceslip.com/advice";
-			var response = Utils.GetWebResponse(url);
+			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<AdviceSlipResponse>(response);
 			return deserializedResponse.Slip.Advice;
 		}

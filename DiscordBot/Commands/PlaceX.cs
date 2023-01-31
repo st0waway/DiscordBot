@@ -1,4 +1,4 @@
-﻿namespace DiscordBot.Helper
+﻿namespace DiscordBot.Commands
 {
 	internal class PlaceX
 	{

@@ -1,5 +1,5 @@
-﻿using DiscordBot.Helper;
-using DiscordBot.Models.Animals.RandomDuckAPI;
+﻿using DiscordBot.Models.Animals.RandomDuckAPI;
+using DiscordBot.Utils;
 using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Animals
@@ -9,7 +9,7 @@ namespace DiscordBot.PublicAPIs.Animals
 		public static string GetRandomDuck()
 		{
 			var url = "https://random-d.uk/api/v2/random";
-			var response = Utils.GetWebResponse(url);
+			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<DuckImageResponse>(response);
 			return deserializedResponse.Url;
 		}

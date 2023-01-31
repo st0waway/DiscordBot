@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
 
-namespace DiscordBot.Helper
+namespace DiscordBot.Commands
 {
 	internal class TimeInfo
 	{

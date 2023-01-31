@@ -1,5 +1,5 @@
-﻿using DiscordBot.Helper;
-using DiscordBot.Models.Personality.Affirmations;
+﻿using DiscordBot.Models.Personality.Affirmations;
+using DiscordBot.Utils;
 using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Personality
@@ -9,7 +9,7 @@ namespace DiscordBot.PublicAPIs.Personality
 		public static string GetAffirmation()
 		{
 			var url = "https://www.affirmations.dev/";
-			var response = Utils.GetWebResponse(url);
+			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<AffirmationResponse>(response);
 			return deserializedResponse.Affirmation;
 		}
