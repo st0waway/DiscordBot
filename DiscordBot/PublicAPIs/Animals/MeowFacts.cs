@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DiscordBot.Helper;
-using DiscordBot.Models.Animals.DogAPI;
+﻿using DiscordBot.Helper;
 using DiscordBot.Models.Animals.MeowFacts;
 using Newtonsoft.Json;
 
