@@ -16,6 +16,9 @@ Anime:
 !dice - roll a die
 !8ball - roll an 8ball 
 
+Entertainment:
+!chuck - get a Chuck Norris joke
+
 Personality:
 !affirmation - get an affirmation
 !advice - get an advice slip 

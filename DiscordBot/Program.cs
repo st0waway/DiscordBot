@@ -6,6 +6,7 @@ using Discord.WebSocket;
 using DiscordBot.Helper;
 using DiscordBot.PublicAPIs.Animals;
 using DiscordBot.PublicAPIs.Anime;
+using DiscordBot.PublicAPIs.Entertainment;
 using DiscordBot.PublicAPIs.Personality;
 
 namespace DiscordBot
@@ -246,6 +247,15 @@ namespace DiscordBot
 					case "!dice":
 						{
 							var text = CatboyAPI.Dice();
+							msg.Channel.SendMessageAsync(text);
+							Logger.WriteLog(msg.Content, text);
+							break;
+						}
+					
+					//entertainment
+					case "!chuck":
+						{
+							var text = ChuckNorris.ChuckJoke();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
