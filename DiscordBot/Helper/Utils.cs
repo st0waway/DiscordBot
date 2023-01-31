@@ -12,12 +12,5 @@ namespace DiscordBot.Helper
 			using StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream());
 			return streamReader.ReadToEnd();
 		}
-
-		public static string GetCommands()
-		{
-			var reader = new StreamReader(ConfigurationManager.AppSettings["commandsPath"]!);
-			var helpText = reader.ReadToEnd();
-			return helpText;
-		}
 	}
 }

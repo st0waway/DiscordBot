@@ -4,6 +4,7 @@ using Discord;
 using Discord.WebSocket;
 
 using DiscordBot.Helper;
+using DiscordBot.Helper.Conversions;
 using DiscordBot.PublicAPIs.Animals;
 using DiscordBot.PublicAPIs.Anime;
 using DiscordBot.PublicAPIs.Entertainment;
@@ -46,7 +47,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!kg"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var kg);
-					var text = UnitConversions.KgToPoundsConversion(kg);
+					var text = WeightConversions.KgToPoundsConversion(kg);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -54,7 +55,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!pounds"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var pounds);
-					var text = UnitConversions.PoundsToKgConversion(pounds);
+					var text = WeightConversions.PoundsToKgConversion(pounds);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -62,7 +63,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!fahrenheit"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
-					var text = UnitConversions.FahrenheitToCelsiusConversion(fahrenheit);
+					var text = TemperatureConversions.FahrenheitToCelsiusConversion(fahrenheit);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -70,7 +71,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!celsius"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
-					var text = UnitConversions.CelsiusToFahrenheitConversion(celsius);
+					var text = TemperatureConversions.CelsiusToFahrenheitConversion(celsius);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -78,7 +79,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!cm"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var cm);
-					var text = UnitConversions.CmToInchConversion(cm);
+					var text = LengthConversions.CmToInchConversion(cm);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -86,7 +87,7 @@ namespace DiscordBot
 				if (msg.Content.Contains("!inches"))
 				{
 					Int32.TryParse(msg.Content.Split(' ')[1], out var inches);
-					var text = UnitConversions.InchToCmConversion(inches);
+					var text = LengthConversions.InchToCmConversion(inches);
 					msg.Channel.SendMessageAsync(text);
 					Logger.WriteLog(msg.Content, text);
 				}
@@ -122,8 +123,8 @@ namespace DiscordBot
 				{
 					//commands
 					case "!commands":
-						{
-							var text = Utils.GetCommands();
+					{
+						var text = Commands.GetCommands();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
