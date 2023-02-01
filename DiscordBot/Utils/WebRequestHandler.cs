@@ -4,12 +4,18 @@ namespace DiscordBot.Utils
 {
     internal class WebRequestHandler
     {
-        public static string GetWebResponse(string url)
+	    public static string GetWebResponse(string url)
         {
-            var request = (HttpWebRequest)WebRequest.Create(url);
-            var httpWebResponse = (HttpWebResponse)request.GetResponse();
-            using StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream());
-            return streamReader.ReadToEnd();
-        }
+            var httpClient = new HttpClient();
+            var response = httpClient.GetStringAsync(url);
+            response.Wait();
+            if (response.IsCompleted)
+            {
+                var result = response.Result;
+                return result;
+			}
+
+			throw new Exception("error");
+		}
     }
 }
