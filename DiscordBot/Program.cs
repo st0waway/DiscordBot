@@ -265,7 +265,7 @@ namespace DiscordBot
 					//personality
 					case "!advice":
 						{
-							var text = AdviceSlipAPI.GetAdvice();
+							var text = AdviceSlipApi.GetAdvice();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;

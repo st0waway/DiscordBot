@@ -8,7 +8,7 @@ namespace DiscordBot.PublicAPIs.Personality
 	{
 		public static string GetAffirmation()
 		{
-			var url = "https://www.affirmations.dev/";
+			const string url = "https://www.affirmations.dev/";
 			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<AffirmationResponse>(response);
 			if (deserializedResponse?.Affirmation != null)
