@@ -174,7 +174,7 @@ namespace DiscordBot
 
 					case "!dog":
 						{
-							var text = RandomDogAPI.GetRandomDog();
+							var text = RandomDogApi.GetRandomDog();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -182,7 +182,7 @@ namespace DiscordBot
 
 					case "!dogfact":
 						{
-							var text = DogAPI.GetDogFact();
+							var text = DogApi.GetDogFact();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -190,7 +190,7 @@ namespace DiscordBot
 
 					case "!duck":
 						{
-							var text = RandomDuckAPIv2.GetRandomDuck();
+							var text = RandomDuckApIv2.GetRandomDuck();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -198,7 +198,7 @@ namespace DiscordBot
 
 					case "!fox":
 						{
-							var text = RandomFoxAPI.GetRandomFox();
+							var text = RandomFoxApi.GetRandomFox();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -231,7 +231,7 @@ namespace DiscordBot
 					//anime
 					case "!8ball":
 						{
-							var text = CatboyAPI.GetEightBallImage();
+							var text = CatBoyApi.GetEightBallImage();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -239,7 +239,7 @@ namespace DiscordBot
 
 					case "!baka":
 						{
-							var text = CatboyAPI.GetBakaGif();
+							var text = CatBoyApi.GetBakaGif();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -247,7 +247,7 @@ namespace DiscordBot
 
 					case "!dice":
 						{
-							var text = CatboyAPI.GetDice();
+							var text = CatBoyApi.GetDice();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;
@@ -274,7 +274,7 @@ namespace DiscordBot
 
 					case "!affirmation":
 						{
-							var text = AffirmationsAPI.GetAffirmation();
+							var text = AffirmationsApi.GetAffirmation();
 							msg.Channel.SendMessageAsync(text);
 							Logger.WriteLog(msg.Content, text);
 							break;

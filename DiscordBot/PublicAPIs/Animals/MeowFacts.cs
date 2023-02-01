@@ -8,10 +8,16 @@ namespace DiscordBot.PublicAPIs.Animals
 	{
 		public static string GetMeowFact()
 		{
-			var url = "https://meowfacts.herokuapp.com/";
+			const string url = "https://meowfacts.herokuapp.com/";
 			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<MeowFactResponse>(response);
-			return deserializedResponse.data[0];
+			if (deserializedResponse?.data != null)
+			{
+				return deserializedResponse.data[0];
+			}
+
+			Logger.WriteLog("The deserialized response was null");
+			throw new NullReferenceException("The deserialized response was null");
 		}
 	}
 }

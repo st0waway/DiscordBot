@@ -4,29 +4,47 @@ using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Anime;
 
-public class CatboyAPI
+public class CatBoyApi
 {
 	public static string GetBakaGif()
 	{
-		var url = "https://api.catboys.com/baka";
+		const string url = "https://api.catboys.com/baka";
 		var response = WebRequestHandler.GetWebResponse(url);
-		var baka = JsonConvert.DeserializeObject<BakaGifReposnse>(response);
-		return baka.Url;
+		var deserializedResponse = JsonConvert.DeserializeObject<BakaGifReposnse>(response);
+		if (deserializedResponse?.Url != null)
+		{
+			return deserializedResponse.Url;
+		}
+		
+		Logger.WriteLog("The deserialized response was null");
+		throw new NullReferenceException("The deserialized response was null");
 	}
 
 	public static string GetDice()
 	{
-		var url = "https://api.catboys.com/dice";
+		const string url = "https://api.catboys.com/dice";
 		var response = WebRequestHandler.GetWebResponse(url);
-		var dice = JsonConvert.DeserializeObject<DiceImageResponse>(response);
-		return dice.Url;
+		var deserializedResponse = JsonConvert.DeserializeObject<DiceImageResponse>(response);
+		if (deserializedResponse?.Url != null)
+		{
+			return deserializedResponse.Url;
+		}
+
+		Logger.WriteLog("The deserialized response was null");
+		throw new NullReferenceException("The deserialized response was null");
 	}
 
 	public static string GetEightBallImage()
 	{
-		var url = "https://api.catboys.com/8ball";
+		const string url = "https://api.catboys.com/8ball";
 		var response = WebRequestHandler.GetWebResponse(url);
-		var eightBall = JsonConvert.DeserializeObject<DiceImageResponse>(response);
-		return eightBall.Url;
+		var deserializedResponse = JsonConvert.DeserializeObject<DiceImageResponse>(response);
+		if (deserializedResponse?.Url != null)
+		{
+			return deserializedResponse.Url;
+		}
+
+		Logger.WriteLog("The deserialized response was null");
+		throw new NullReferenceException("The deserialized response was null");
 	}
 }

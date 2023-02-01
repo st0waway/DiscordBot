@@ -4,14 +4,20 @@ using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Personality
 {
-    internal class AdviceSlipAPI
+    internal class AdviceSlipApi
 	{
 		public static string GetAdvice()
 		{
-			var url = "https://api.adviceslip.com/advice";
+			const string url = "https://api.adviceslip.com/advice";
 			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<AdviceSlipResponse>(response);
-			return deserializedResponse.Slip.Advice;
+			if (deserializedResponse?.Slip?.Advice != null)
+			{
+				return deserializedResponse.Slip.Advice;
+			}
+
+			Logger.WriteLog("The deserialized response was null");
+			throw new NullReferenceException("The deserialized response was null");
 		}
 	}
 }

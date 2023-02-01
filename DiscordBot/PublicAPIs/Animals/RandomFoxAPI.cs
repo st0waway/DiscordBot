@@ -4,14 +4,20 @@ using Newtonsoft.Json;
 
 namespace DiscordBot.PublicAPIs.Animals
 {
-    internal class RandomFoxAPI
+    internal class RandomFoxApi
 	{
 		public static string GetRandomFox()
 		{
-			var url = "https://randomfox.ca/floof/";
+			const string url = "https://randomfox.ca/floof/";
 			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<FoxImageResponse>(response);
-			return deserializedResponse.Image;
+			if (deserializedResponse?.Image != null)
+			{
+				return deserializedResponse.Image;
+			}
+
+			Logger.WriteLog("The deserialized response was null");
+			throw new NullReferenceException("The deserialized response was null");
 		}
 	}
 }

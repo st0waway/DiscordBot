@@ -8,10 +8,16 @@ namespace DiscordBot.PublicAPIs.Animals
 	{
 		public static string GetCatImage()
 		{
-			var url = "https://cataas.com/cat?json=true";
+			const string url = "https://cataas.com/cat?json=true";
 			var response = WebRequestHandler.GetWebResponse(url);
 			var deserializedResponse = JsonConvert.DeserializeObject<CataasImageResponse>(response);
-			return "https://cataas.com" + deserializedResponse.Url;
+			if (deserializedResponse != null)
+			{
+				return "https://cataas.com" + deserializedResponse.Url;
+			}
+
+			Logger.WriteLog("The deserialized response was null");
+			throw new NullReferenceException("The deserialized response was null");
 		}
 	}
 }
