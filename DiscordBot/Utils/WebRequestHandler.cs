@@ -15,7 +15,7 @@ namespace DiscordBot.Utils
                 return result;
 			}
 
-			throw new Exception("error");
+			throw new HttpRequestException($"The http response wasn't completed successfully on url: {url}");
 		}
     }
 }
