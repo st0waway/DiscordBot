@@ -1,6 +1,4 @@
-﻿using System.Net;
-
-namespace DiscordBot.Utils
+﻿namespace DiscordBot.Utils
 {
     internal class WebRequestHandler
     {
