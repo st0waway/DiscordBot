@@ -9,9 +9,9 @@ namespace DiscordBot.Utils
             var httpClient = new HttpClient();
             var response = httpClient.GetStringAsync(url);
             response.Wait();
-            if (response.IsCompleted)
+            if (response.IsCompletedSuccessfully)
             {
-                var result = response.Result;
+	            var result = response.Result;
                 return result;
 			}
 
