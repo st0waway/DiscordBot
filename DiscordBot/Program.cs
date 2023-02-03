@@ -1,5 +1,4 @@
 ﻿using System.Configuration;
-
 using Discord;
 using Discord.WebSocket;
 using DiscordBot.Commands;
@@ -14,7 +13,7 @@ namespace DiscordBot
 {
     internal class Program
 	{
-		private static void Main(string[] args) => MainAsync().GetAwaiter().GetResult();
+		private static void Main() => MainAsync().GetAwaiter().GetResult();
 
 		private static async Task MainAsync()
 		{
@@ -22,7 +21,7 @@ namespace DiscordBot
 			{
 				GatewayIntents = GatewayIntents.AllUnprivileged | GatewayIntents.MessageContent
 			};
-			DiscordSocketClient client = new DiscordSocketClient(config);
+			var client = new DiscordSocketClient(config);
 			client.MessageReceived += CommandsHandler;
 			client.Log += Log;
 
@@ -45,7 +44,7 @@ namespace DiscordBot
 			if (msg.Author.IsBot) return Task.CompletedTask;
 			if (msg.Content.Contains("!kg"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var kg);
+				var kg = int.Parse(msg.Content.Split(' ')[1]);
 				var text = WeightConversions.KgToPoundsConversion(kg);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -53,7 +52,7 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!pounds"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var pounds);
+				var pounds = int.Parse(msg.Content.Split(' ')[1]);
 				var text = WeightConversions.PoundsToKgConversion(pounds);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -61,7 +60,7 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!fahrenheit"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var fahrenheit);
+				var fahrenheit = int.Parse(msg.Content.Split(' ')[1]);
 				var text = TemperatureConversions.FahrenheitToCelsiusConversion(fahrenheit);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -69,7 +68,7 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!celsius"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var celsius);
+				var celsius = int.Parse(msg.Content.Split(' ')[1]);
 				var text = TemperatureConversions.CelsiusToFahrenheitConversion(celsius);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -77,7 +76,7 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!cm"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var cm);
+				var cm = int.Parse(msg.Content.Split(' ')[1]);
 				var text = LengthConversions.CmToInchConversion(cm);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -85,7 +84,7 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!inches"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var inches);
+				var inches = int.Parse(msg.Content.Split(' ')[1]);
 				var text = LengthConversions.InchToCmConversion(inches);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -93,8 +92,8 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!placebear"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var width);
-				Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
 				var text = PlaceX.PlaceBear(width, height);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -102,8 +101,8 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!placedog"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var width);
-				Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
 				var text = PlaceX.PlaceDog(width, height);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
@@ -111,8 +110,8 @@ namespace DiscordBot
 
 			if (msg.Content.Contains("!placekitten"))
 			{
-				Int32.TryParse(msg.Content.Split(' ')[1], out var width);
-				Int32.TryParse(msg.Content.Split(' ')[2], out var height);
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
 				var text = PlaceX.PlaceKitten(width, height);
 				msg.Channel.SendMessageAsync(text);
 				Logger.WriteLog(msg.Content, text);
