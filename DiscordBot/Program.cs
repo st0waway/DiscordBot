@@ -17,7 +17,7 @@ namespace DiscordBot
 			};
 			var client = new DiscordSocketClient(config);
 			client.MessageReceived += CommandsHandler.HandleCommands;
-			client.MessageReceived += CommandsHandler.HandleArgumentedCommands;
+			client.MessageReceived += CommandsHandler.HandleCommandsWithArguments;
 			client.Log += Log;
 
 			var token = ConfigurationManager.AppSettings["discordToken"];
