@@ -1,12 +1,6 @@
 ﻿using System.Configuration;
 using Discord;
 using Discord.WebSocket;
-using DiscordBot.Commands;
-using DiscordBot.Commands.Conversions;
-using DiscordBot.PublicAPIs.Animals;
-using DiscordBot.PublicAPIs.Anime;
-using DiscordBot.PublicAPIs.Entertainment;
-using DiscordBot.PublicAPIs.Personality;
 using DiscordBot.Utils;
 
 namespace DiscordBot
