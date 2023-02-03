@@ -11,85 +11,91 @@ namespace DiscordBot.View
 {
     internal class CommandsHandler
     {
+	    public static Task HandleCommandsWithArguments(SocketMessage msg)
+	    {
+		    if (msg.Author.IsBot) return Task.CompletedTask;
+			if (msg.Content.Contains("!kg"))
+			{
+				var kg = int.Parse(msg.Content.Split(' ')[1]);
+				var text = WeightConversions.KgToPoundsConversion(kg);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!pounds"))
+			{
+				var pounds = int.Parse(msg.Content.Split(' ')[1]);
+				var text = WeightConversions.PoundsToKgConversion(pounds);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!fahrenheit"))
+			{
+				var fahrenheit = int.Parse(msg.Content.Split(' ')[1]);
+				var text = TemperatureConversions.FahrenheitToCelsiusConversion(fahrenheit);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!celsius"))
+			{
+				var celsius = int.Parse(msg.Content.Split(' ')[1]);
+				var text = TemperatureConversions.CelsiusToFahrenheitConversion(celsius);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!cm"))
+			{
+				var cm = int.Parse(msg.Content.Split(' ')[1]);
+				var text = LengthConversions.CmToInchConversion(cm);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!inches"))
+			{
+				var inches = int.Parse(msg.Content.Split(' ')[1]);
+				var text = LengthConversions.InchToCmConversion(inches);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!placebear"))
+			{
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
+				var text = PlaceX.PlaceBear(width, height);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!placedog"))
+			{
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
+				var text = PlaceX.PlaceDog(width, height);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+			if (msg.Content.Contains("!placekitten"))
+			{
+				var width = int.Parse(msg.Content.Split(' ')[1]);
+				var height = int.Parse(msg.Content.Split(' ')[2]);
+				var text = PlaceX.PlaceKitten(width, height);
+				msg.Channel.SendMessageAsync(text);
+				Logger.WriteLog(msg.Content, text);
+			}
+
+            return Task.CompletedTask;
+		}
+
         public static Task HandleCommands(SocketMessage msg)
         {
             //conversions
             if (msg.Author.IsBot) return Task.CompletedTask;
-            if (msg.Content.Contains("!kg"))
-            {
-                var kg = int.Parse(msg.Content.Split(' ')[1]);
-                var text = WeightConversions.KgToPoundsConversion(kg);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!pounds"))
-            {
-                var pounds = int.Parse(msg.Content.Split(' ')[1]);
-                var text = WeightConversions.PoundsToKgConversion(pounds);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!fahrenheit"))
-            {
-                var fahrenheit = int.Parse(msg.Content.Split(' ')[1]);
-                var text = TemperatureConversions.FahrenheitToCelsiusConversion(fahrenheit);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!celsius"))
-            {
-                var celsius = int.Parse(msg.Content.Split(' ')[1]);
-                var text = TemperatureConversions.CelsiusToFahrenheitConversion(celsius);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!cm"))
-            {
-                var cm = int.Parse(msg.Content.Split(' ')[1]);
-                var text = LengthConversions.CmToInchConversion(cm);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!inches"))
-            {
-                var inches = int.Parse(msg.Content.Split(' ')[1]);
-                var text = LengthConversions.InchToCmConversion(inches);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!placebear"))
-            {
-                var width = int.Parse(msg.Content.Split(' ')[1]);
-                var height = int.Parse(msg.Content.Split(' ')[2]);
-                var text = PlaceX.PlaceBear(width, height);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!placedog"))
-            {
-                var width = int.Parse(msg.Content.Split(' ')[1]);
-                var height = int.Parse(msg.Content.Split(' ')[2]);
-                var text = PlaceX.PlaceDog(width, height);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
-            if (msg.Content.Contains("!placekitten"))
-            {
-                var width = int.Parse(msg.Content.Split(' ')[1]);
-                var height = int.Parse(msg.Content.Split(' ')[2]);
-                var text = PlaceX.PlaceKitten(width, height);
-                msg.Channel.SendMessageAsync(text);
-                Logger.WriteLog(msg.Content, text);
-            }
-
             switch (msg.Content)
             {
                 //commands
@@ -251,6 +257,7 @@ namespace DiscordBot.View
                         break;
                     }
             }
+
             return Task.CompletedTask;
         }
     }
