@@ -18,6 +18,7 @@ Anime:
 
 Entertainment:
 !chuck - get a Chuck Norris joke
+!uselessfact - get a random useless fact
 
 Personality:
 !affirmation - get an affirmation

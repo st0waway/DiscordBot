@@ -1,4 +1,5 @@
 ﻿using Discord.WebSocket;
+
 using DiscordBot.Controller.CommandsApiCall.Animals;
 using DiscordBot.Controller.CommandsApiCall.Anime;
 using DiscordBot.Controller.CommandsApiCall.Entertainment;
@@ -9,11 +10,11 @@ using DiscordBot.Controller.Utils;
 
 namespace DiscordBot.View
 {
-    internal class CommandsHandler
-    {
-	    public static Task HandleCommandsWithArguments(SocketMessage msg)
-	    {
-		    if (msg.Author.IsBot) return Task.CompletedTask;
+	internal class CommandsHandler
+	{
+		public static Task HandleCommandsWithArguments(SocketMessage msg)
+		{
+			if (msg.Author.IsBot) return Task.CompletedTask;
 			if (msg.Content.Contains("!kg"))
 			{
 				var kg = int.Parse(msg.Content.Split(' ')[1]);
@@ -89,176 +90,184 @@ namespace DiscordBot.View
 				Logger.WriteLog(msg.Content, text);
 			}
 
-            return Task.CompletedTask;
+			return Task.CompletedTask;
 		}
 
-        public static Task HandleCommands(SocketMessage msg)
-        {
-            //conversions
-            if (msg.Author.IsBot) return Task.CompletedTask;
-            switch (msg.Content)
-            {
-                //commands
-                case "!commands":
-                    {
-                        var text = CommandsList.GetCommandsList();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+		public static Task HandleCommands(SocketMessage msg)
+		{
+			//conversions
+			if (msg.Author.IsBot) return Task.CompletedTask;
+			switch (msg.Content)
+			{
+				//commands
+				case "!commands":
+					{
+						var text = CommandsList.GetCommandsList();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                //time
-                case "!timestow":
-                    {
-                        var text = TimeInfo.TimeStowaway();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				//time
+				case "!timestow":
+					{
+						var text = TimeInfo.TimeStowaway();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!timesashimi":
-                    {
-                        var text = TimeInfo.TimeSashimi();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!timesashimi":
+					{
+						var text = TimeInfo.TimeSashimi();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!timeaniq":
-                    {
-                        var text = TimeInfo.TimeAniq();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!timeaniq":
+					{
+						var text = TimeInfo.TimeAniq();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!timewood":
-                    {
-                        var text = TimeInfo.TimeWood();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!timewood":
+					{
+						var text = TimeInfo.TimeWood();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                //animals
-                case "!cat":
-                    {
-                        var text = Cataas.GetCatImage();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				//animals
+				case "!cat":
+					{
+						var text = Cataas.GetCatImage();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!dog":
-                    {
-                        var text = RandomDogApi.GetRandomDog();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!dog":
+					{
+						var text = RandomDogApi.GetRandomDog();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!dogfact":
-                    {
-                        var text = DogApi.GetDogFact();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!dogfact":
+					{
+						var text = DogApi.GetDogFact();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!duck":
-                    {
-                        var text = RandomDuckApIv2.GetRandomDuck();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!duck":
+					{
+						var text = RandomDuckApIv2.GetRandomDuck();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!fox":
-                    {
-                        var text = RandomFoxApi.GetRandomFox();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!fox":
+					{
+						var text = RandomFoxApi.GetRandomFox();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!meowfact":
-                    {
-                        var text = MeowFacts.GetMeowFact();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!meowfact":
+					{
+						var text = MeowFacts.GetMeowFact();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!quokka":
-                    {
-                        var text = Quokkapics.GetQuokkaPic();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!quokka":
+					{
+						var text = Quokkapics.GetQuokkaPic();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!shibe":
-                    {
-                        var text = Shibe.GetShibeImage();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!shibe":
+					{
+						var text = Shibe.GetShibeImage();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                //anime
-                case "!8ball":
-                    {
-                        var text = CatBoyApi.GetEightBallImage();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				//anime
+				case "!8ball":
+					{
+						var text = CatBoyApi.GetEightBallImage();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!baka":
-                    {
-                        var text = CatBoyApi.GetBakaGif();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!baka":
+					{
+						var text = CatBoyApi.GetBakaGif();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                case "!dice":
-                    {
-                        var text = CatBoyApi.GetDice();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				case "!dice":
+					{
+						var text = CatBoyApi.GetDice();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                //entertainment
-                case "!chuck":
-                    {
-                        var text = ChuckNorris.GetChuckJoke();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
+				//entertainment
+				case "!chuck":
+					{
+						var text = ChuckNorris.GetChuckJoke();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                //personality
-                case "!advice":
-                    {
-                        var text = AdviceSlipApi.GetAdvice();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
+				case "!uselessfact":
+					{
+						var text = RandomUselessFacts.GetRandomUselessFact();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
 
-                    }
+				//personality
+				case "!advice":
+					{
+						var text = AdviceSlipApi.GetAdvice();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
 
-                case "!affirmation":
-                    {
-                        var text = AffirmationsApi.GetAffirmation();
-                        msg.Channel.SendMessageAsync(text);
-                        Logger.WriteLog(msg.Content, text);
-                        break;
-                    }
-            }
+					}
 
-            return Task.CompletedTask;
-        }
-    }
+				case "!affirmation":
+					{
+						var text = AffirmationsApi.GetAffirmation();
+						msg.Channel.SendMessageAsync(text);
+						Logger.WriteLog(msg.Content, text);
+						break;
+					}
+			}
+
+			return Task.CompletedTask;
+		}
+	}
 }
