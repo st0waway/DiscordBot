@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Animals\Shibe.online\" />
+    <Folder Include="Model\Animals\Shibe.online\" />
   </ItemGroup>
 
 </Project>
