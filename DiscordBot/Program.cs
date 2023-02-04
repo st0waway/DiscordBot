@@ -1,7 +1,7 @@
 ﻿using System.Configuration;
 using Discord;
 using Discord.WebSocket;
-using DiscordBot.View;
+using DiscordBot.Views;
 
 namespace DiscordBot
 {
