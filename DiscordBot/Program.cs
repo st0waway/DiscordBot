@@ -7,9 +7,7 @@ namespace DiscordBot
 {
     internal class Program
 	{
-		private static void Main() => MainAsync().GetAwaiter().GetResult();
-
-		private static async Task MainAsync()
+		private static async Task Main()
 		{
 			var config = new DiscordSocketConfig()
 			{
