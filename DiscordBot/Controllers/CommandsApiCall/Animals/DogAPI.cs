@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Animals.DogAPI;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class DogApi
+    internal class DogApi : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://dog-api.kinduff.com/api/facts";
             var response = WebRequestHandler.GetWebResponse(url);

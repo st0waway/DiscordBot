@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Animals.Cataas;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class Cataas
+    internal class Cataas : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://cataas.com/cat?json=true";
             var response = WebRequestHandler.GetWebResponse(url);

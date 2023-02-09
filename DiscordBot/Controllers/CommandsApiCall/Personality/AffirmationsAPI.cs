@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Personality.Affirmations;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Personality
 {
-    public class AffirmationsApi
+    public class AffirmationsApi : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://www.affirmations.dev/";
             var response = WebRequestHandler.GetWebResponse(url);

@@ -1,12 +1,14 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Entertainment.RandomUselessFacts;
+
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Entertainment
 {
-	internal class RandomUselessFacts
+	internal class RandomUselessFacts : IWebApiCaller
 	{
-		public static string GetApiResponse()
+		public string GetApiResponse()
 		{
 			const string url = "https://uselessfacts.jsph.pl/random.json?language=en";
 			var response = WebRequestHandler.GetWebResponse(url);

@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Animals.RandomDogAPI;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class RandomDogApi
+    internal class RandomDogApi : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://random.dog/woof.json";
             var response = WebRequestHandler.GetWebResponse(url);

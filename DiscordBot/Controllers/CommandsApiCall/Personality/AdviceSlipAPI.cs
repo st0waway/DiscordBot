@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Personality.AdviceSlipAPI;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Personality
 {
-    internal class AdviceSlipApi
+    internal class AdviceSlipApi : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://api.adviceslip.com/advice";
             var response = WebRequestHandler.GetWebResponse(url);

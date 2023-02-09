@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Animals.Quokka.pics;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class Quokkapics
-    {
-        public static string GetApiResponse()
+    internal class Quokkapics : IWebApiCaller
+	{
+        public string GetApiResponse()
         {
             const string url = "https://quokka.pics/api/";
             var response = WebRequestHandler.GetWebResponse(url);

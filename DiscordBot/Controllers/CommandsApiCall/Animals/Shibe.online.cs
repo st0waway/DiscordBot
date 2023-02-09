@@ -1,11 +1,12 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class Shibe
+    internal class Shibe : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://shibe.online/api/shibes";
             var response = WebRequestHandler.GetWebResponse(url);

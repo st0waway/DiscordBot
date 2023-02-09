@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Entertainment.ChuckNorrisIO;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Entertainment
 {
-    internal class ChuckNorris
+    internal class ChuckNorris : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://api.chucknorris.io/jokes/random";
             var response = WebRequestHandler.GetWebResponse(url);

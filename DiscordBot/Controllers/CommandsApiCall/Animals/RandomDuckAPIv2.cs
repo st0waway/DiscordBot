@@ -1,12 +1,13 @@
 ﻿using DiscordBot.Controllers.Utils;
+using DiscordBot.Models;
 using DiscordBot.Models.Animals.RandomDuckAPI;
 using Newtonsoft.Json;
 
 namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
-    internal class RandomDuckApIv2
+    internal class RandomDuckApIv2 : IWebApiCaller
     {
-        public static string GetApiResponse()
+        public string GetApiResponse()
         {
             const string url = "https://random-d.uk/api/v2/random";
             var response = WebRequestHandler.GetWebResponse(url);
