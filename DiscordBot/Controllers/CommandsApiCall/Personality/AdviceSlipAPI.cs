@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Personality
 {
     internal class AdviceSlipApi
     {
-        public static string GetAdvice()
+        public static string GetApiResponse()
         {
             const string url = "https://api.adviceslip.com/advice";
             var response = WebRequestHandler.GetWebResponse(url);

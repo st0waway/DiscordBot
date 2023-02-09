@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Entertainment
 {
     internal class ChuckNorris
     {
-        public static string GetChuckJoke()
+        public static string GetApiResponse()
         {
             const string url = "https://api.chucknorris.io/jokes/random";
             var response = WebRequestHandler.GetWebResponse(url);

@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class DogApi
     {
-        public static string GetDogFact()
+        public static string GetApiResponse()
         {
             const string url = "https://dog-api.kinduff.com/api/facts";
             var response = WebRequestHandler.GetWebResponse(url);

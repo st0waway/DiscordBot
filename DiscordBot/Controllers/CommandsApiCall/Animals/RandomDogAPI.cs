@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class RandomDogApi
     {
-        public static string GetRandomDog()
+        public static string GetApiResponse()
         {
             const string url = "https://random.dog/woof.json";
             var response = WebRequestHandler.GetWebResponse(url);

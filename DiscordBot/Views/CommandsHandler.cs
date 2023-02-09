@@ -143,7 +143,7 @@ namespace DiscordBot.Views
 				//animals
 				case "!cat":
 					{
-						var text = Cataas.GetCatImage();
+						var text = Cataas.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -151,7 +151,7 @@ namespace DiscordBot.Views
 
 				case "!dog":
 					{
-						var text = RandomDogApi.GetRandomDog();
+						var text = RandomDogApi.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -159,7 +159,7 @@ namespace DiscordBot.Views
 
 				case "!dogfact":
 					{
-						var text = DogApi.GetDogFact();
+						var text = DogApi.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -167,7 +167,7 @@ namespace DiscordBot.Views
 
 				case "!duck":
 					{
-						var text = RandomDuckApIv2.GetRandomDuck();
+						var text = RandomDuckApIv2.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -175,7 +175,7 @@ namespace DiscordBot.Views
 
 				case "!fox":
 					{
-						var text = RandomFoxApi.GetRandomFox();
+						var text = RandomFoxApi.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -183,7 +183,7 @@ namespace DiscordBot.Views
 
 				case "!meowfact":
 					{
-						var text = MeowFacts.GetMeowFact();
+						var text = MeowFacts.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -191,7 +191,7 @@ namespace DiscordBot.Views
 
 				case "!quokka":
 					{
-						var text = Quokkapics.GetQuokkaPic();
+						var text = Quokkapics.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -199,7 +199,7 @@ namespace DiscordBot.Views
 
 				case "!shibe":
 					{
-						var text = Shibe.GetShibeImage();
+						var text = Shibe.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -233,7 +233,7 @@ namespace DiscordBot.Views
 				//entertainment
 				case "!chuck":
 					{
-						var text = ChuckNorris.GetChuckJoke();
+						var text = ChuckNorris.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -241,7 +241,7 @@ namespace DiscordBot.Views
 
 				case "!uselessfact":
 					{
-						var text = RandomUselessFacts.GetRandomUselessFact();
+						var text = RandomUselessFacts.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -250,7 +250,7 @@ namespace DiscordBot.Views
 				//personality
 				case "!advice":
 					{
-						var text = AdviceSlipApi.GetAdvice();
+						var text = AdviceSlipApi.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;
@@ -259,7 +259,7 @@ namespace DiscordBot.Views
 
 				case "!affirmation":
 					{
-						var text = AffirmationsApi.GetAffirmation();
+						var text = AffirmationsApi.GetApiResponse();
 						msg.Channel.SendMessageAsync(text);
 						Logger.WriteLog(msg.Content, text);
 						break;

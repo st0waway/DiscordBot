@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Entertainment
 {
 	internal class RandomUselessFacts
 	{
-		public static string GetRandomUselessFact()
+		public static string GetApiResponse()
 		{
 			const string url = "https://uselessfacts.jsph.pl/random.json?language=en";
 			var response = WebRequestHandler.GetWebResponse(url);

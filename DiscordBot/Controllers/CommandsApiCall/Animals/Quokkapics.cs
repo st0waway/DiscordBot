@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class Quokkapics
     {
-        public static string GetQuokkaPic()
+        public static string GetApiResponse()
         {
             const string url = "https://quokka.pics/api/";
             var response = WebRequestHandler.GetWebResponse(url);

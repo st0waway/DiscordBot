@@ -5,7 +5,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class Shibe
     {
-        public static string GetShibeImage()
+        public static string GetApiResponse()
         {
             const string url = "https://shibe.online/api/shibes";
             var response = WebRequestHandler.GetWebResponse(url);

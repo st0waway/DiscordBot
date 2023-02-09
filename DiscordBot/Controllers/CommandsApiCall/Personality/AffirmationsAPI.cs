@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Personality
 {
     public class AffirmationsApi
     {
-        public static string GetAffirmation()
+        public static string GetApiResponse()
         {
             const string url = "https://www.affirmations.dev/";
             var response = WebRequestHandler.GetWebResponse(url);

@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class Cataas
     {
-        public static string GetCatImage()
+        public static string GetApiResponse()
         {
             const string url = "https://cataas.com/cat?json=true";
             var response = WebRequestHandler.GetWebResponse(url);

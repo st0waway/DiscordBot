@@ -6,7 +6,7 @@ namespace DiscordBot.Controllers.CommandsApiCall.Animals
 {
     internal class RandomDuckApIv2
     {
-        public static string GetRandomDuck()
+        public static string GetApiResponse()
         {
             const string url = "https://random-d.uk/api/v2/random";
             var response = WebRequestHandler.GetWebResponse(url);
