@@ -13,15 +13,14 @@ namespace DiscordBot
 			{
 				GatewayIntents = GatewayIntents.AllUnprivileged | GatewayIntents.MessageContent
 			};
+
 			var client = new DiscordSocketClient(config);
 			client.MessageReceived += CommandsHandler.HandleCommands;
 			client.MessageReceived += CommandsHandler.HandleCommandsWithArguments;
 			client.Log += Log;
-
 			var token = ConfigurationManager.AppSettings["discordToken"];
 			await client.LoginAsync(TokenType.Bot, token);
 			await client.StartAsync();
-
 			Console.ReadLine();
 		}
 
